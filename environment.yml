@@ -1,0 +1,13 @@
+name: cs124
+channels:
+  - defaults
+dependencies:
+  - jupyter=1.0.0
+  - nb_conda=2.2.1
+  - numpy=1.19.2
+  - python=3.8.5
+  - matplotlib=3.3.1
+  - scikit-learn=0.23.1
+  - spacy=2.3.5
+  - nltk=3.5
+  - gensim=3.8.3
