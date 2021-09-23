@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - jupyter=1.0.0
+  - jupyter_client<7.0.0
   - nb_conda=2.2.1
   - numpy=1.19.2
   - python=3.8.5
