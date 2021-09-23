@@ -11,6 +11,13 @@ run:
          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
          bash Miniconda3-latest-Linux-x86_64.sh
 
+    (Some people encounter an HTTP error upon installing the environment. If that is your case, try this alternative installation script:)   
+   
+         wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh 
+         bash Miniconda3-latest-Linux-x86_64.sh [-u]
+    
+    (The optional -u flag is to ignore the existing installation.)
+
 Note that this installer may take some time to run.
    
    It will also prompt you to review a license agreement and agree to it, as well as
