@@ -53,6 +53,7 @@ to install Ubuntu for Windows.
 
 4. If so, you're all set and can continue to the next section!
 
+#### Helpful note: If you need to access the disks under the Windows system (c:\ d:\ e:\ etc), they are located under ubuntu path /mnt/
 
 ## Part 2: Installing Miniconda
 
