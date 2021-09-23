@@ -68,7 +68,7 @@ to install Ubuntu for Windows.
    (Some people encounter an HTTP error upon installing the environment. If that is your case, try this alternative installation script:)   
    
          wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh 
-         bash Miniconda3-latest-Linux-x86_64.sh [-u]
+         bash https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh  [-u]
     
    (The optional -u flag is to ignore the existing installation.)
    
