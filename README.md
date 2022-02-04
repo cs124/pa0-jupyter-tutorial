@@ -1,12 +1,16 @@
-# PA0 - Environment Setup; Python/Jupyter and NumPy Tutorials
+# cs 124 PA0: Environment Setup; Jupyter Notebooks and Python
 
-Welcome to the first programming assignment! 
-The goal of this assignment is to get your coding environment set up for all 
-the future assignments and to provide some useful review of `Jupyter Notebooks`,
-`Python`, `Regular Expressions`, and `NumPy`. 
+Welcome to `PA0`!
+This assignment consists of the following three parts:
+* Setup Instructions
+* Jupyter Tutorial
+* Python Tutorial
+  
+The goal of this assignment is to get your coding environment set up for the future assignments and rovide some useful introduction to `Jupyter Notebooks`.
+We are also including a comprehensive `Python` tutorial for you to practice your `Python` skills.
 
-It is ungraded, so once you've got your environment set up correctly and are
-satisfied that you understand all the exercises, you are done!
+This assignment is ungraded, so once you've got your environment set up 
+correctly and are satisfied that you understand both of the tutorials, you are done!
 You are not required to submit anything for this assignment.
 
 ## Part 1: Environment Setup
@@ -46,22 +50,19 @@ forum, the teaching staff can help you there as well.
 The setup instructions you followed in `Part 1` should have directed you 
 through all the steps needed to run `Jupyter Notebooks`.
 
-## Part 2: Python/Jupyter Tutorial
+## Part 2: Jupyter Tutorial
 
-Work through the notebook titled `python_intro.ipynb`, which will teach you the
-basics of `Jupyter Notebooks` as well as `Python`. 
-We encourage you to work through all of the exercises and answer the questions 
-to make sure your `Python` basics are solid. 
-We also provide some good practice with `Regular Expressions` that will prove 
-very useful for `PA1`, coming up soon.
+Work through the notebook titled `jupyter_tutorial.ipynb`, which will teach you the
+basics of `Jupyter Notebooks`.
+Note that we will not cover `Python` fundamentals in this notebook. 
 
-## Part 3: NumPy Tutorial
+## Part 3: Python Tutorial
 
-We are also providing you with a tutorial on `NumPy`. 
-Open the file titled `numpy_intro.ipynb` and work through the examples there.
-You don't need to know `NumPy` for `PA1`, but you will work with it in `PA2`.
+We highly recommend skimming through our `Python` tutorial, which can be found in the notebook titled `python_tutorial.ipynb`, even if you are very comfortable with `Python`. 
+
+We assume you understand the topics reviewed in this notebook in the rest of our class.
 
 ## Done!
 
 You are done with `PA0`! 
-Note that you do not have to submit anything. 
+Note that you do not have to submit anything.
