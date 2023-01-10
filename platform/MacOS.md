@@ -9,9 +9,8 @@ for this class, you're in the right place!
    https://docs.conda.io/en/latest/miniconda.html. 
    
     Scroll down to the MacOSX
-   installers section and select the file under Python 3.8 named
-   "Miniconda3 MacOSX 64-bit pkg" (the second one). Generally speaking we
-   recommend using the pkg installer as it is easier, but if you are comfortable
+   installers section and select the file under Python 3.8 ending in "pkg" (either Intel or M1 depending on the chip you have. Generally speaking we
+   recommend using this pkg installer as it is easier, but if you are comfortable
    with the command line and strongly prefer using a shell script installer,
    feel free to download the bash version. 
    
