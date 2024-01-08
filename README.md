@@ -58,7 +58,10 @@ We highly recommend skimming through our `Python` tutorial, which can be found i
 
 We assume you understand the topics reviewed in this notebook in the rest of our class.
 
+## Part 4: Submit PA0
+
+Now that you have set up everything successfully, you can submit your first PA to Gradescope - see `pa0.ipynb` for more!
+
 ## Done!
 
-You are done with `PA0`! 
-Note that you do not have to submit anything.
+You are done with `PA0`!
