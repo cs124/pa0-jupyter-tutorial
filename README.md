@@ -9,10 +9,6 @@ This assignment consists of the following three parts:
 The goal of this assignment is to get your coding environment set up for the future assignments and rovide some useful introduction to `Jupyter Notebooks`.
 We are also including a comprehensive `Python` tutorial for you to practice your `Python` skills.
 
-This assignment is ungraded, so once you've got your environment set up 
-correctly and are satisfied that you understand both of the tutorials, you are done!
-You are not required to submit anything for this assignment.
-
 ## Part 1: Environment Setup
 
 Decide where you will be doing your assignments. 
