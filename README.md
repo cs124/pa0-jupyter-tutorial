@@ -1,12 +1,13 @@
 # cs 124 PA0: Environment Setup; Jupyter Notebooks and Python
 
 Welcome to `PA0`!
-This assignment consists of the following three parts:
+This assignment consists of the following four parts:
 * Setup Instructions
 * Jupyter Tutorial
 * Python Tutorial
+* Submitting PA0
   
-The goal of this assignment is to get your coding environment set up for the future assignments and rovide some useful introduction to `Jupyter Notebooks`.
+The goal of this assignment is to get your coding environment set up for the future assignments and provide some useful introduction to `Jupyter Notebooks`.
 We are also including a comprehensive `Python` tutorial for you to practice your `Python` skills.
 
 ## Part 1: Environment Setup
