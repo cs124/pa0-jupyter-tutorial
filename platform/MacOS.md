@@ -18,20 +18,16 @@ During this Part, we will be downloading Steam to download Rosetta so that we ca
 
 ## Part 1: Installing Miniconda
 
-1. Install miniconda with Python 3.8. Download the Python 3.8 miniconda installer from here:
-   https://docs.conda.io/en/latest/miniconda.html. 
-   
-    Scroll down to the MacOSX
-   installers section and select the file under Python 3.8 ending in "pkg" (either Intel or M1 depending on the chip you have. Generally speaking we
-   recommend using this pkg installer as it is easier, but if you are comfortable
-   with the command line and strongly prefer using a shell script installer,
-   feel free to download the bash version. 
+### We recommend creating a new user on your Mac before this installation. This part will install a version of Conda that is not the most up-to-date and could conflict with existing installations. Creating a new user and installing miniconda only for that user will avoid this issue and keep this environment/conda version isolated to that user.
+
+1. Download the Python 3.8 miniconda installer by clicking this link:
+   https://repo.anaconda.com/miniconda/Miniconda3-py38_4.9.2-MacOSX-x86_64.pkg.  
    
     Once it's downloaded, run the installer through to completion. Note that this installer may take some time to run.
        
     It will also prompt you to review a license agreement and agree to it, as well as
        ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
-       respond "yes" to everything.
+       respond "yes" and/or "allow" to everything.
     
 
 2. Open a terminal and run 
