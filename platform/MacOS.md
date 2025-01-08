@@ -10,10 +10,15 @@ If you have an M1, M2, or M3 Chip, you need to do a bit of additional setup firs
 During this Part, we will be downloading Steam to download Rosetta so that we can use miniconda for Intel chips. There are some issues when creating the necessary cs124 virtual environment using Apple M1,M2,M3 chips so this helps avoid these issues.
 
 1. Install Steam for Mac at: https://store.steampowered.com/about/
+   
 2. After completion of the download, you will be prompted to add Steam to your Applications folder. Drag Steam into the Applications Folder as prompted.
-3. Open Steam by double-clicking the logo. If you see a MacOS error popup stating "steam_osx is damaged", just close the error popup and move to Step 4. 
+
+3. Open Steam by double-clicking the logo. If you see a MacOS error popup stating "steam_osx is damaged", just close the error popup and move to Step 4.
+   
 4. Go to your Applications Folder and open Steam by double clicking it.
+
 5. You may receive prompts from MacOS asking if you are sure that you would like to open Steam, keep hitting "Open" on these until Steam actually launches.
+   
 6. You should eventually see Steam downloading updates. Once this downloading is complete, you should reach a login portion. Once you have reached the login portion, you have finished Part 0. 
 
 ## Part 1: Installing Miniconda
@@ -118,4 +123,13 @@ and would like to learn more, you can check out the guide
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
 
+   If you see the error "500 : Internal Server Error", then go to the terminal and first stop your jupyter notebook via control-c.
+
+   Above in the terminal, there should be a red error line stating a lack of permissions to a conf.json file. The file path should be displayed as "/SOME/FOLDER/PATH/conf.json". Take the folder of this conf.json file (i.e. "/SOME/FOLDER/PATH/"). For example, the folder is likely to be "/usr/local/share/jupyter/nbconvert/templates/" or "/usr/share/jupyter/nbconvert/templates/".
+   
+   Finally, take this folder path and enter the following command in the terminal. Enter your computer user's password when prompted.
+        
+        sudo chmod -R 777 /SOME/FOLDER/PATH/
+   
+   Finally, try starting again from Step 1 of Part 4. 
    
