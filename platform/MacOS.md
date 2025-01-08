@@ -3,6 +3,19 @@
 If your personal computer is running MacOS and you plan to use it
 for this class, you're in the right place!
 
+## Part 0: Setup for Apple M1, M2, M3 Chips
+
+If you have an M1, M2, or M3 Chip, you need to do a bit of additional setup first. If you do not fall into this category (i.e. you have an Intel Chip), please skip this part and go to Part 1. 
+
+During this Part, we will be downloading Steam to download Rosetta so that we can use miniconda for Intel chips. There are some issues when creating the necessary cs124 virtual environment using Apple M1,M2,M3 chips so this helps avoid these issues.
+
+1. Install Steam for Mac at: https://store.steampowered.com/about/
+2. After completion of the download, you will be prompted to add Steam to your Applications folder. Drag Steam into the Applications Folder as prompted.
+3. Open Steam by double-clicking the logo. If you see a MacOS error popup stating "steam_osx is damaged", just close the error popup and move to Step 4. 
+4. Go to your Applications Folder and open Steam by double clicking it.
+5. You may receive prompts from MacOS asking if you are sure that you would like to open Steam, keep hitting "Open" on these until Steam actually launches.
+6. You should eventually see Steam downloading updates. Once this downloading is complete, you should reach a login portion. Once you have reached the login portion, you have finished Part 0. 
+
 ## Part 1: Installing Miniconda
 
 1. Install miniconda with Python 3.8. Download the Python 3.8 miniconda installer from here:
