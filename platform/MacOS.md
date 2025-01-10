@@ -17,14 +17,17 @@ This command checks if any processes are running with the Rosetta translation la
 
 ## Part 1: Installing Miniconda
 
-If you already have a Conda installation, it should be compatible, so skip to part 2, but check the FAQ if you run into any issues.
+If you already have a Conda installation, it should be compatible, so skip to part 2. Make sure to read all of part 3 as well.
 
-1. Download the latest miniconda installer by clicking this link:
+1. Download the latest miniconda installer by clicking one of these links:
 
-   1. Graphical Installer for x86_64 conda (recommended):
-           [https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.pkg](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg)
+   1. Graphical Installer for Apple Silicon conda:
+           https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.pkg
+
+   2. Graphical Installer for Intel conda:
+           https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg
       
-   2. Documentation for alternate install methods: [https://docs.anaconda.com/miniconda/install/](https://docs.anaconda.com/miniconda/install/)
+   3. Documentation for other install methods: [https://docs.anaconda.com/miniconda/install/](https://docs.anaconda.com/miniconda/install/)
     
     Once it's downloaded, run the installer through to completion. Note that this installer may take some time to run.
        
@@ -33,7 +36,7 @@ If you already have a Conda installation, it should be compatible, so skip to pa
        respond "yes" and/or "allow" to everything.
     
 
-2. Open a terminal and verify that conda is installed by running:
+1. Open a terminal and verify that conda is installed by running:
    
        conda -V
 
@@ -41,7 +44,7 @@ If you already have a Conda installation, it should be compatible, so skip to pa
 
    `zsh: command not found: conda`
     
-    Then you need to find your conda directory (try searching for the miniconda folder in Finder). Once you have, run
+    First, try again in a new terminal window. If conda is still not working, then you need to find where you installed conda (try searching for the miniconda folder in Finder). Once you have, run
 
        ~/REPLACE/ME/WITH/PATH/TO/miniconda/condabin/conda init
 
@@ -111,9 +114,9 @@ and would like to learn more, you can check out the guide
     that's entirely normal.
 
     - You may get an error that says "not all packages could be found upstream". 
-      This usually happens because the packages we use in this class might not have
+      This happens because the package versions we use in this class do not have
       native binaries for Apple Silicon Macs. To fix this issue, we will tell Conda
-      to use osx64 versions of these packages.
+      to use osx64 (Intel) versions of these packages.
 
           CONDA_SUBDIR=osx-64 conda env create -f environment.yml 
           conda activate cs124 
