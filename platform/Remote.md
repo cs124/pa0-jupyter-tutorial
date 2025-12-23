@@ -171,8 +171,7 @@ pick a port number between 1025 and 65535 when starting the server. Any number
 
             ssh -NL [local port you'd like to use]:localhost:[port number you picked on rice/myth] [SUNet]@[rice/myth][rice/myth machine number].stanford.edu
     
-     For example, your command may look like:
-            ssh -NL 8800:localhost:8800 abc@myth53.stanford.edu
+     For example, your command may look like: `ssh -NL 8800:localhost:8800 abc@myth53.stanford.edu`
 
     You can pick any local port number you want between 1025 and 65535. It does
     not have to be the same one you used earlier for the jupyter
