@@ -38,19 +38,18 @@ You need one of the following Windows versions:
 
 ### Installation Steps
 
-1. **Open PowerShell as Administrator**
+1. Open PowerShell on your machine. You can find it by looking up "PowerShell" in any search bar.
 
-2. **Install WSL with Ubuntu**
-   
-   Run this single command:
+2. Run this command to install WSL first:
+        wsl --install
+
+3. Run this single command to install Ubuntu:
    
        wsl --install -d Ubuntu
 
    This process may take several minutes depending on your internet connection. You may be asked to reboot your computer and/or create a Linux username and password.
 
-5. **Verify installation**
-   
-   Once setup is complete, you should see a terminal prompt that looks something like:
+4. Once setup is complete, you should see a terminal prompt that looks something like:
    
        username@computername:~$
    
@@ -61,18 +60,13 @@ You need one of the following Windows versions:
 
    If you see this, congratulations! You have a working Linux environment.
 
-### Accessing WSL in the Future
-
-You can open your Ubuntu terminal in several ways:
-- Search for "Ubuntu" in the Start menu
-- Open Windows Terminal and select "Ubuntu" from the dropdown
-- Type `wsl` in PowerShell or Command Prompt
+P.S. If you would like more details on setting up WSL and Ubuntu, see [here](https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2/).
 
 ## Part 2: Installing Miniconda
 
 Now that you have Ubuntu running on your Windows machine, you'll install Miniconda to manage Python and packages for the class.
 
-1. Launch Ubuntu from the Start menu (or type `wsl` in PowerShell).
+1. Launch Ubuntu from the Start menu (or type `wsl` in PowerShell). You should do this every time before you open a directory for this class.
 
 2. Download and install Miniconda. Run these commands in your Ubuntu terminal:
    
@@ -81,7 +75,7 @@ Now that you have Ubuntu running on your Windows machine, you'll install Minicon
 
    Note: The download and installation may take a few minutes.
 
-3. Follow the installation prompts. When asked "Do you wish to updte your shell profile to automatically initialize conda?", type `yes`
+3. Follow the installation prompts. When asked "Do you wish to update your shell profile to automatically initialize conda?", type `yes`.
 
 4. Close your Ubuntu terminal and open a new one. You should now see `(base)` at the beginning of your command prompt, indicating that conda is active.
 
@@ -164,6 +158,9 @@ P.S. If you're unfamiliar with git and would like to learn more, you can check o
    and download them, and then install them in the environment. If those 
    packages require any other packages for them to work, it will also install 
    those.
+   
+    Note that this downloading and installation process may take a few minutes,
+    that's entirely normal.
 
 2. Activate the newly created environment with this command:
         
@@ -185,7 +182,6 @@ paste it into the browser of your choice and navigate to it.
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
       1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
-      the environment `cs124` is in the list of available kernels.
-      2. If not, stop your notebook via control-c in the terminal and run this command:
+      the environment `cs124` is in the list of available kernels. If not, stop your notebook via control-c in the terminal and run this command:
       `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
       Then, restart your notebook, click the "Kernal" button, select "Change kernel," and choose `cs124` as your kernel.

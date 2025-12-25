@@ -21,8 +21,7 @@ run:
 Note that this installer may take some time to run.
    
    It will also prompt you to review a license agreement and agree to it, as well as
-   ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
-   respond "yes" to everything.
+   ask "Do you wish to update your shell profile to automatically initialize conda?". You should respond "yes" to everything.
     
 
 2. Open a terminal and run 
@@ -108,9 +107,8 @@ P.S. If you're unfamiliar with git and would like to learn more, you can check o
 
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
-      1. You will be prompted to select a kernel for this Jupyter notebook. Check to see if
-      the environment `cs124` is in the list of available kernels.
-      2. If not, stop your notebook via control-c in the terminal and run this command:
+      1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
+      the environment `cs124` is in the list of available kernels. If not, stop your notebook via control-c in the terminal and run this command:
       `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
       Then, restart your notebook, click the "Kernal" button, select "Change kernel," and choose `cs124` as your kernel.
    
