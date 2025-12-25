@@ -36,49 +36,28 @@ You need one of the following Windows versions:
 - Windows 11 (any version)
 - Windows 10 version 2004 or higher (Build 19041 or higher)
 
-To check your Windows version, press `Windows key + R`, type `winver`, and press Enter.
-
-If you're running an older version of Windows 10, you can update through Windows Settings > Update & Security > Windows Update.
-
 ### Installation Steps
 
 1. **Open PowerShell as Administrator**
-   - Right-click on the Start button
-   - Select "Windows PowerShell (Admin)" or "Terminal (Admin)"
-   - If prompted by User Account Control, click "Yes"
 
 2. **Install WSL with Ubuntu**
    
    Run this single command:
    
-       wsl --install
+       wsl --install -d Ubuntu
 
-   This command will:
-   - Enable the required WSL features
-   - Download and install the latest Linux kernel
-   - Install Ubuntu as your default Linux distribution
-   - Set WSL 2 as the default version
-
-   Note: This process may take several minutes depending on your internet connection.
-
-3. **Restart your computer**
-   
-   After the installation completes, restart your computer when prompted.
-
-4. **Set up Ubuntu**
-   
-   After restarting:
-   - Ubuntu will automatically launch and complete the installation
-   - You'll be prompted to create a UNIX username and password
-   - Choose a username (lowercase, no spaces) and password
-   - **Important:** Your password won't be visible as you type it - this is normal for Linux password entry
-   - Remember this password - you'll need it for administrative tasks
+   This process may take several minutes depending on your internet connection. You may be asked to reboot your computer and/or create a Linux username and password.
 
 5. **Verify installation**
    
    Once setup is complete, you should see a terminal prompt that looks something like:
    
        username@computername:~$
+   
+   Close the shell and start a new one. Run the command `wsl -l -v`. You should see something like
+
+         NAME        STATE    VERSION
+       * Ubuntu      Stopped     2
 
    If you see this, congratulations! You have a working Linux environment.
 
@@ -88,12 +67,6 @@ You can open your Ubuntu terminal in several ways:
 - Search for "Ubuntu" in the Start menu
 - Open Windows Terminal and select "Ubuntu" from the dropdown
 - Type `wsl` in PowerShell or Command Prompt
-
-### Helpful Notes
-
-- **Accessing Windows files from Ubuntu:** Your Windows drives (C:\, D:\, etc.) are accessible under `/mnt/` in Ubuntu. For example, your Windows C: drive is at `/mnt/c/`
-- **Accessing Ubuntu files from Windows:** You can access your Ubuntu files from Windows File Explorer by typing `\\wsl$` in the address bar
-- **Copy and paste in terminal:** Right-click to paste, or use `Ctrl+Shift+C` to copy and `Ctrl+Shift+V` to paste
 
 ## Part 2: Installing Miniconda
 
@@ -108,13 +81,7 @@ Now that you have Ubuntu running on your Windows machine, you'll install Minicon
 
    Note: The download and installation may take a few minutes.
 
-3. Follow the installation prompts.
-   
-   - Press Enter to review the license agreement
-   - Press Space to scroll through the license
-   - Type `yes` to accept the license agreement
-   - Press Enter to confirm the default installation location
-   - When asked "Do you wish to initialize Miniconda3 by running conda init?", type `yes`
+3. Follow the installation prompts. When asked "Do you wish to updte your shell profile to automatically initialize conda?", type `yes`
 
 4. Close your Ubuntu terminal and open a new one. You should now see `(base)` at the beginning of your command prompt, indicating that conda is active.
 
@@ -126,7 +93,7 @@ Now that you have Ubuntu running on your Windows machine, you'll install Minicon
 
    You should see something like:
    
-       conda 25.1.1
+       conda 25.11.1
 
    The exact version number may vary, but as long as you see a conda version, your installation was successful!
 
@@ -217,7 +184,7 @@ paste it into the browser of your choice and navigate to it.
 
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
-      1. You will be prompted to select a kernel for this Jupyter notebook. Check to see if
+      1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
       the environment `cs124` is in the list of available kernels.
       2. If not, stop your notebook via control-c in the terminal and run this command:
       `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
