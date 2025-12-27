@@ -34,7 +34,7 @@ If you are not using Windows, you can skip this part.
 
 You have two options:
 
-1. Go to the Windows_Setup.md and follow the instructions in Part 1 to 
+1. Go to the `Windows_Setup.md` and follow the instructions in Part 1 to 
    install Ubuntu for Windows. You can then use the Ubuntu command line for
    all future steps. 
    
@@ -49,7 +49,7 @@ __[PuTTY]__ instead.
 
 3. SSH into Rice/Myth.
    - __[MacOS/Linux/Ubuntu for Windows]__: Open a terminal window (i.e. for
-     Windows, run Ubuntu). Then, in that terminal, run:
+     Windows, run Ubuntu by first running the `wsl` command in PowerShell). Then, in that terminal, run:
 
             ssh [Your SUNet]@rice.stanford.edu
             # OR
