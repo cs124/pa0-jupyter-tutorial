@@ -3,9 +3,9 @@
 If your personal computer is running MacOS and you plan to use it
 for this class, you're in the right place!
 
-## Part 0: Setup for Apple Silicon Chips (M1, M2, M3, M4)
+## Part 0: Setup for Apple Silicon Chips (M1, M2, M3, M4, M5)
 
-If you have an M1, M2, or M3 Chip, you might need to do a bit of additional setup first. If you do not fall into this category (i.e. you have an Intel Chip), please skip this part and go to Part 1. 
+If you have an M1, M2, M3, M4, or M5 Chip, you might need to do a bit of additional setup first. If you do not fall into this category (i.e. you have an Intel Chip), please skip this part and go to Part 1. 
 
 We will first check if Rosetta 2 is installed. Rosetta is a translation layer that lets you run applications for Intel on your newer Mac.
 
@@ -32,25 +32,44 @@ If you already have a Conda installation, it should be compatible, so skip to pa
     Once it's downloaded, run the installer through to completion. Note that this installer may take some time to run.
        
     It will also prompt you to review a license agreement and agree to it, as well as
-       ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
+       ask "Do you wish to update your shell profile to automatically initialize conda?". You should
        respond "yes" and/or "allow" to everything.
     
+    **Note for Intel Mac users:** While new package builds for Intel Macs ended in August 2025, all existing packages remain available and fully functional. You'll have access to all the packages needed for this course.
 
-1. Open a terminal and verify that conda is installed by running:
+2. Open a terminal and verify that conda is installed by running:
    
        conda -V
 
-    If you get this error:
+    If you see something like `conda 25.11.1`, you are good to go!
+
+    If you get an error like:
 
    `zsh: command not found: conda`
+   
+   or
+   
+   `__conda_exe:1: no such file or directory: /Users/yourname/miniconda3/bin/conda`
     
-    First, try again in a new terminal window. If conda is still not working, then you need to find where you installed conda (try searching for the miniconda folder in Finder). Once you have, run
+    First, try again in a new terminal window. If conda is still not working, the installer may have configured conda incorrectly. Recent versions install to `/opt/miniconda3` by default, so run:
 
-       ~/REPLACE/ME/WITH/PATH/TO/miniconda/condabin/conda init
+       /opt/miniconda3/condabin/conda init zsh
 
-   After running conda init, it tells you to reload your shell, which you can do with the default shell by running:
+    If that command fails with "no such file or directory", then conda may be installed elsewhere. You can search for it with:
 
-       source ~/.zsh
+       find /opt /Users -name "conda" -type f 2>/dev/null | grep -E "(bin/conda|condabin/conda)"
+
+    Once you find the correct path, run conda init with that path:
+
+       /ACTUAL/PATH/TO/miniconda3/condabin/conda init zsh
+
+   After running conda init, reload your shell:
+
+       source ~/.zshrc
+
+   Then verify conda is working:
+
+       conda -V
 
    If this still doesn't work, make a post on Ed so we can help!
 
@@ -75,23 +94,22 @@ You will need to clone this repository to get access to the assignment:
        cd ~/Desktop/cs124
 
 
-3. From there, clone the assignment with 
+2. From there, clone the assignment with 
    
        git clone https://github.com/cs124/pa0-python-jupyter-tutorial.git
 
       This will create a folder `pa0-python-jupyter-tutorial` in the directory.
 
 
-4. Move to that directory
+3. Move to that directory
 
        cd pa0-python-jupyter-tutorial
 
-This is the extent of the git knowledge you'll need to have for this course (until pa5).
+This is the extent of the git knowledge you'll need to have for the first few PAs of the course.
 All submission will be done by uploading files to Gradescope, so you don't
 need to worry about committing or pushing.
 
-P.S. If you're unfamiliar with git (i.e. haven't taken CS 107 or CS110 yet) 
-and would like to learn more, you can check out the guide
+P.S. If you're unfamiliar with git and would like to learn more, you can check out the guide
 [here](https://guides.github.com/introduction/git-handbook/).
    
 ## Part 3: Creating a Conda environment
@@ -121,16 +139,16 @@ and would like to learn more, you can check out the guide
           CONDA_SUBDIR=osx-64 conda env create -f environment.yml 
           conda activate cs124 
           conda config --env --set subdir osx-64 
-        
    
 
-1. Activate the newly created environment:
+2. Activate the newly created environment:
         
        conda activate cs124
    
     You should now see `(cs124)` in front of your shell prompt. 
    You'll need to run `conda activate cs124` every time you open a new terminal 
    and re-start your notebook server.
+
 
 ## Part 4: Starting the Jupyter notebook server and opening the notebook
 
@@ -146,6 +164,10 @@ and would like to learn more, you can check out the guide
 
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
+      1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
+      the environment `cs124` is in the list of available kernels. If not, stop your notebook via control-c in the terminal and run this command:
+      `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
+      Then, restart your notebook, click the "Kernal" button, select "Change kernel," and choose `cs124` as your kernel.
 
 4. If you see the error "500 : Internal Server Error", then go to the terminal and first stop your jupyter notebook via control-c.
 
@@ -155,5 +177,4 @@ pa0.ipynb file to open it.
            
        sudo chmod -R 777 /SOME/FOLDER/PATH/
       
-      3. Finally, try starting again from Step 1 of Part 4. 
-   
+      3. Finally, try starting again from Step 1 of Part 4.

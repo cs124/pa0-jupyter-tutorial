@@ -26,73 +26,91 @@ have access to a Linux or macOS alternative, __don't worry__. There are good
 options available for Windows, and instructions for how to get things set
 up are provided below.
 
-## Part 1: Setting up Ubuntu for Windows
+## Part 1: Setting up WSL (Windows Subsystem for Linux)
 
-1. To get a working Linux environment set up on your Windows machine, we
-recommend using Ubuntu for Windows 10. It requires that you have an installation
-of Windows 10 which includes [this update](https://support.microsoft.com/en-gb/help/4028685/windows-10-get-the-fall-creators-update). 
+Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for a virtual machine or dual-boot setup.
 
+### Prerequisites
 
-* If you have an up-to-date Windows 10 installation, you are all set. 
-* If you do not have the update installed, you should go ahead and update from
-Windows settings, or follow the specific instructions in the link above to 
-install it.
-* If you have an older version of Windows, like Windows 7 or 8, you 
-will need to [upgrade to Windows 10 first](https://www.microsoft.com/en-us/software-download/windows10ISO) (it's free).
-If for some reason you're not able to upgrade to Windows 10, please contact the
-teaching staff on Piazza or via the staff email address as soon as possible!
+You need one of the following Windows versions:
+- Windows 11 (any version)
+- Windows 10 version 2004 or higher (Build 19041 or higher)
+
+### Installation Steps
+
+1. Open PowerShell on your machine. You can find it by looking up "PowerShell" in any search bar.
+
+2. Run this command to install WSL first:
+        wsl --install
+
+3. Run this single command to install Ubuntu:
    
-2. Follow the instructions [here](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview)
-to install Ubuntu for Windows.
+       wsl --install -d Ubuntu
+
+   This process may take several minutes depending on your internet connection. You may be asked to reboot your computer and/or create a Linux username and password.
+
+4. Once setup is complete, you should see a terminal prompt that looks something like:
    
+       username@computername:~$
+   
+   Close the shell and start a new one. Run the command `wsl -l -v`. You should see something like
 
-3. Once the installation process is complete, run Ubuntu (it should 
-   be located in your list of installed programs). A terminal window should 
-   pop up and you should be able to type in it.
+         NAME        STATE    VERSION
+       * Ubuntu      Stopped     2
 
+   If you see this, congratulations! You have a working Linux environment.
 
-4. If so, you're all set and can continue to the next section!
-
-#### Helpful note: If you need to access the disks under the Windows system (c:\ d:\ e:\ etc), they are located under ubuntu path /mnt/
+P.S. If you would like more details on setting up WSL and Ubuntu, see [here](https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2/).
 
 ## Part 2: Installing Miniconda
 
-1. Install miniconda with Python 3.8. To do this, run Ubuntu to start a terminal
-   (you can find Ubuntu under your list of installed programs).
-   
-    Then in the terminal that opens, run:
-   
-         wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-         bash Miniconda3-latest-Linux-x86_64.sh
-    
-   (Some people encounter an HTTP error upon installing the environment. If that is your case, try this alternative installation script:)   
-   
-         wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh 
-         bash Miniconda3-4.7.12.1-Linux-x86_64.sh  [-u]
-    
-   (The optional -u flag is to ignore the existing installation.)
-   
-   Note that this installer may take some time to run.
-   
-   It will also prompt you to review a license agreement and agree to it, as well as
-   ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
-   respond "yes" to everything.
-   
+Now that you have Ubuntu running on your Windows machine, you'll install Miniconda to manage Python and packages for the class.
 
-2. Run 
-   
-        conda -V
+1. Launch Ubuntu from the Start menu (or type `wsl` in PowerShell). You should do this every time before you open a directory for this class.
 
-    You should see 
+2. Download and install Miniconda. Run these commands in your Ubuntu terminal:
    
-        conda 4.9.2
+       wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+       bash Miniconda3-latest-Linux-x86_64.sh
 
-    If so, your installation of miniconda was successful!
+   Note: The download and installation may take a few minutes.
+
+3. Follow the installation prompts. When asked "Do you wish to update your shell profile to automatically initialize conda?", type `yes`.
+
+4. Close your Ubuntu terminal and open a new one. You should now see `(base)` at the beginning of your command prompt, indicating that conda is active.
+
+5. Verify conda installation
+   
+   Run:
+   
+       conda -V
+
+   You should see something like:
+   
+       conda 25.11.1
+
+   The exact version number may vary, but as long as you see a conda version, your installation was successful!
+
+### Troubleshooting
+
+If you get `conda: command not found` after reopening your terminal:
+
+1. Check if conda was installed:
+   
+       ls ~/miniconda3/bin/conda
+
+2. If the file exists, manually initialize conda:
+   
+       ~/miniconda3/bin/conda init bash
+
+3. Close and reopen your terminal, then try `conda -V` again
+
+If this still doesn't work, make a post on Ed so we can help!
 
 ## Part 3: Cloning the Assignment with git
 
 The next thing you need to do is download the assignment. This assignment,
-and all of the future ones, will be distributed as a git repository. 
+and all of the future ones, will be distributed as a git repository.
 
 If you're reading this, presumably you're already on the Github repository
 page, but if not, you can find it here: https://github.com/cs124/pa0-python-jupyter-tutorial.
@@ -102,8 +120,10 @@ You will need to clone this repository to get access to the assignment:
 
 1. Find a suitable folder to clone the assignment repo and go there with cd:
 
-        cd /folder/to/put/cs124/assignments/
+        mkdir ~/cs124
+        cd ~/cs124
 
+   Note: The `~` represents your home directory in Ubuntu, which is separate from your Windows home directory.
 
 2. From there, clone the assignment with 
    
@@ -116,22 +136,20 @@ You will need to clone this repository to get access to the assignment:
 
         cd pa0-python-jupyter-tutorial
 
-This is the extent of the git knowledge you'll need to have for this course.
+This is the extent of the git knowledge you'll need to have for the first few PAs.
 All submission will be done by uploading files to Gradescope, so you don't
 need to worry about committing or pushing.
 
-P.S. If you're unfamiliar with git (i.e. haven't taken CS 107 or CS110 yet) 
-and would like to learn more, you can check out the guide
+P.S. If you're unfamiliar with git and would like to learn more, you can check out the guide
 [here](https://guides.github.com/introduction/git-handbook/).
 
-
 ## Part 4: Creating a Conda environment
-   
+
 1. Create a conda environment with all the dependencies you'll need. You should
    run this in the directory containing `environment.yml` (the directory 
    `pa0-python-jupyter-tutorial`, you should already be there after part 2): 
    
-        conda env create -f environment.yml
+       conda env create -f environment.yml
 
    This will create a new Python environment (you can think of it as a
    separate, clean installation of Python that we can install packages in 
@@ -143,13 +161,12 @@ and would like to learn more, you can check out the guide
    
     Note that this downloading and installation process may take a few minutes,
     that's entirely normal.
-   
 
-2. Activate the newly created environment:
+2. Activate the newly created environment with this command:
         
-        conda activate cs124
+       conda activate cs124
    
-    You should now see `(cs124)` in front of your shell prompt. 
+   You should now see `(cs124)` in front of your shell prompt. 
    You'll need to run `conda activate cs124` every time you open a new terminal 
    and re-start your notebook server.
 
@@ -159,12 +176,12 @@ and would like to learn more, you can check out the guide
 
         jupyter notebook --no-browser
 
-
 2. The terminal output should contain a URL to access the notebook. Copy and 
 paste it into the browser of your choice and navigate to it.
 
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
-
-   
-
+      1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
+      the environment `cs124` is in the list of available kernels. If not, stop your notebook via control-c in the terminal and run this command:
+      `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
+      Then, restart your notebook, click the "Kernal" button, select "Change kernel," and choose `cs124` as your kernel.

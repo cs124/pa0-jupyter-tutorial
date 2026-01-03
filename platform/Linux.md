@@ -5,7 +5,7 @@ for this class, you're in the right place!
 
 ## Part 1: Installing Miniconda
 
-1. Install miniconda with Python 3.8. Open a terminal/shell session and
+1. Install miniconda. Open a terminal/shell session and
 run:
    
          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -21,19 +21,14 @@ run:
 Note that this installer may take some time to run.
    
    It will also prompt you to review a license agreement and agree to it, as well as
-   ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
-   respond "yes" to everything.
+   ask "Do you wish to update your shell profile to automatically initialize conda?". You should respond "yes" to everything.
     
 
 2. Open a terminal and run 
    
         conda -V
 
-    You should see 
-   
-        conda 4.9.2
-
-    If so, your installation of miniconda was successful!
+    You should see a Conda version printed (the exact number may differ; it should be in the form of 25.x.x). If so, your installation of miniconda was successful!
 
 ## Part 2: Cloning the Assignment with git
 
@@ -62,12 +57,11 @@ You will need to clone this repository to get access to the assignment:
 
         cd pa0-python-jupyter-tutorial
 
-This is the extent of the git knowledge you'll need to have for this course.
+This is the extent of the git knowledge you'll need to have for the first few PAs.
 All submission will be done by uploading files to Gradescope, so you don't
 need to worry about committing or pushing.
 
-P.S. If you're unfamiliar with git (i.e. haven't taken CS 107 or CS110 yet) 
-and would like to learn more, you can check out the guide
+P.S. If you're unfamiliar with git and would like to learn more, you can check out the guide
 [here](https://guides.github.com/introduction/git-handbook/).
 
 
@@ -113,5 +107,8 @@ and would like to learn more, you can check out the guide
 
 3. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
-
+      1. You may be prompted to select a kernel for this Jupyter notebook. Check to see if
+      the environment `cs124` is in the list of available kernels. If not, stop your notebook via control-c in the terminal and run this command:
+      `python -m ipykernel install --user --name cs124 --display-name "cs124"`.
+      Then, restart your notebook, click the "Kernal" button, select "Change kernel," and choose `cs124` as your kernel.
    

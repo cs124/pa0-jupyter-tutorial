@@ -34,7 +34,7 @@ If you are not using Windows, you can skip this part.
 
 You have two options:
 
-1. Go to the Windows_Setup.md and follow the instructions in Part 1 to 
+1. Go to the `Windows_Setup.md` and follow the instructions in Part 1 to 
    install Ubuntu for Windows. You can then use the Ubuntu command line for
    all future steps. 
    
@@ -49,7 +49,7 @@ __[PuTTY]__ instead.
 
 3. SSH into Rice/Myth.
    - __[MacOS/Linux/Ubuntu for Windows]__: Open a terminal window (i.e. for
-     Windows, run Ubuntu). Then, in that terminal, run:
+     Windows, run Ubuntu by first running the `wsl` command in PowerShell). Then, in that terminal, run:
 
             ssh [Your SUNet]@rice.stanford.edu
             # OR
@@ -74,23 +74,17 @@ __[PuTTY]__ instead.
 
    Note that this installer may take some time to run.
    
-   It will also prompt you to review a license agreement and agree to it, as well as
-   ask "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
+   It will also prompt you to review a license agreement and agree to it, as well as ask something like
+   "Do you wish the installer to initialize Miniconda3 by running conda init?". You should
    respond "yes" to everything.
-   
-2. Once it has finished, copy and run the following command in your terminal 
-   to allow you to use conda from the command line:
-       
-        printf '\n# add path to conda\nexport PATH="$HOME/miniconda3/bin:$PATH"\n' >> ~/.bashrc
-        source ~/.bashrc
 
-3. Run 
+2. Run 
    
         conda -V
 
-    You should see 
+    You should see something like
    
-        conda 4.9.2
+        conda 25.11.1
 
     If so, your installation of miniconda was successful!
 
@@ -121,12 +115,11 @@ You will need to clone this repository to get access to the assignment:
 
         cd pa0-python-jupyter-tutorial
 
-This is the extent of the git knowledge you'll need to have for this course.
+This is the extent of the git knowledge you'll need to have for the first few PAs.
 All submission will be done by uploading files to Gradescope, so you don't
 need to worry about committing or pushing.
 
-P.S. If you're unfamiliar with git (i.e. haven't taken CS 107 or CS110 yet) 
-and would like to learn more, you can check out the guide
+P.S. If you're unfamiliar with git and would like to learn more, you can check out the guide
 [here](https://guides.github.com/introduction/git-handbook/).
 
 ## Part 4: Creating a Conda environment
@@ -176,7 +169,9 @@ pick a port number between 1025 and 65535 when starting the server. Any number
      local machine (NOTE: don't close the one that you used to SSH into 
      rice/myth, that one needs to stay open) and enter the following command:
 
-            ssh -NL [local port you'd like to use]:localhost:[port number you picked on rice/myth] [SUNet]@[rice/myth].stanford.edu
+            ssh -NL [local port you'd like to use]:localhost:[port number you picked on rice/myth] [SUNet]@[rice/myth][rice/myth machine number].stanford.edu
+    
+     For example, your command may look like: `ssh -NL 8800:localhost:8800 abc@myth53.stanford.edu`
 
     You can pick any local port number you want between 1025 and 65535. It does
     not have to be the same one you used earlier for the jupyter
@@ -195,7 +190,7 @@ pick a port number between 1025 and 65535 when starting the server. Any number
     Under Source port, type the local port you'd like to forward to. 
     Destination, type:
 
-        [rice/myth].stanford.edu:[port your Jupyter notebook server is running on]
+        [rice/myth][rice/myth machine number].stanford.edu:[port your Jupyter notebook server is running on]
      
     Then, click "Add".
 
@@ -216,3 +211,25 @@ pick a port number between 1025 and 65535 when starting the server. Any number
 
 4. From the Jupyter notebook file explorer window that opens, click on the
 pa0.ipynb file to open it.
+
+## Part 6: Submitting
+
+After you have created the submission zip, first, run this command to find where the submission zip is:
+        
+        pwd
+
+This should return something like
+        
+        /afs/.ir/users/YOUR/SUNET/ID/cs124/pa0-python-jupyter-tutorial
+
+Copy that command and append submission.zip to it:
+
+        /afs/.ir/users/YOUR/SUNET/ID/cs124/pa0-python-jupyter-tutorial/submission.zip
+
+Then, cd into a local folder where you'd like to save the submission zip, and use the following command to copy the zip from Myth to your local machine:
+
+        scp -r [SUNet]@[rice/myth][rice/myth machine number].stanford.edu:/afs/.ir/users/YOUR/SUNET/ID/cs124/pa0-python-jupyter-tutorial/submission.zip .
+
+The period at the end of that command means that you are copying the zip file into your current directory.
+
+You'll be prompted to enter your password. Then you'll be good to go!
