@@ -29,15 +29,7 @@ directory.
   follow the instructions there.
       
 * If you are pretty sure that your personal machine won't work for this class,
-reach out to the teaching staff and let them know what your situation is like.
-They will try to figure out the best possible option for you. 
-Generally, there are two possibilities:
-  * __If possible, we first recommend trying to get things working on Google
-  Colab.__
-  You can find the instructions in the `Google_Colab.md` file.
-  * If that is not an option, you can try working remotely on Stanford's 
-  `rice`/`myth` machines.
-  The instructions can be found in the `Remote.md` file.
+you can connect remotely to Stanford's Myth or Rice machines. The instructions can be found in the `Remote.md` file.
 
 If you run into any issues during the process that you can't figure out, please
 come to office hours and a CA will be able to help you out.
