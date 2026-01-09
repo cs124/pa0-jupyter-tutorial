@@ -190,7 +190,7 @@ pa0.ipynb file to open it.
 
 After you have created `submission.zip` in WSL, run the following command to transfer that zip file over from WSL to your local computer:
 
-        cp ~/cs124/submission.zip /mnt/c/Users/YOUR_USER_NAME/OneDrive/Desktop/
+        cp ~/cs124/pa0-jupyter-tutorial/submission.zip /mnt/c/Users/YOUR_USER_NAME/OneDrive/Desktop/
 
 Note that you may want to replace `OneDrive/Desktop/` with another destination folder based on your preferences.
 
