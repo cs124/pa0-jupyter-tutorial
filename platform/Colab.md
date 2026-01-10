@@ -38,14 +38,15 @@ option, you can continue to the instructions below.
    Click on pa0.ipynb below to load the notebook. You may want to make a copy so that you can save the file and return to it. Make sure to hit save (Ctrl + S on Windows and Cmd + S on Mac) early and often.
 
 2. At the top of the notebook file, add the following cells and run them one by one:
-        Cell 1:
+
+    Cell 1:
             !pip install -q condacolab
         
-        Cell 2:
+    Cell 2:
             import condacolab
             condacolab.install()
         
-        Cell 3:
+    Cell 3:
             %%writefile environment.yml
             name: cs124
             channels:
@@ -61,10 +62,10 @@ option, you can continue to the instructions below.
             - nltk>=3.8
             - gensim>=4.3
 
-        Cell 4:
+    Cell 4:
             !conda env create -f environment.yml
         
-        Cell 5:
+    Cell 5:
             import os
             import sys
 
